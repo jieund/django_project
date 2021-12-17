@@ -5,6 +5,23 @@ Detail
 {% endblock %}
 
 {% block content %}
-{{object.site_name}}</br>
-{{object.url}}
+<div class = "btn-group">
+    <a href="{% url 'bookmark:add' %}" class="'btn btn-info">Add Bookmark</a>
+</div>
+<p></p>
+<div class="row">
+    <div class="col"></div>
+    <div class="col-12 col-xl-8 col-md-4">
+        <div class="cad" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{object.site_name}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><a href="{{object.url}}"></a>{{object.url}} </h6>
+                <p class="card-text">{{object.contents }}</p>
+                <a href="{% url 'bookmark:update' object.id %}" class="btn btn-success btn-sm">수정</a>
+                <a href="{% url 'bookmark:delete' object.id %}" class="btn btn-danger btn-sm">삭제</a>
+            </div>
+        </div>
+    </div>
+    <div class="col"></div>
+</div>
 {% endblock %}
