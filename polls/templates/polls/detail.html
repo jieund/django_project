@@ -2,6 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    {% extends 'base.html' %}
+    {% block title %}
+    Bookmark Add
+    {% endblock %}
+    {% block content %}
+
     <title>Title</title>
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
@@ -22,3 +28,4 @@
 </form>
 </body>
 </html>
+{% endblock %}
